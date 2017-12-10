@@ -1,0 +1,11 @@
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Debug\netcoreapp2.0\Borderlands2Guns.deps.json
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Debug\netcoreapp2.0\Borderlands2Guns.runtimeconfig.json
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Debug\netcoreapp2.0\Borderlands2Guns.runtimeconfig.dev.json
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Debug\netcoreapp2.0\Borderlands2Guns.dll
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Debug\netcoreapp2.0\Borderlands2Guns.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Debug\netcoreapp2.0\Borderlands2Guns.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Debug\netcoreapp2.0\Borderlands2Guns.csproj.CoreCompileInputs.cache
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Debug\netcoreapp2.0\Borderlands2Guns.AssemblyInfoInputs.cache
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Debug\netcoreapp2.0\Borderlands2Guns.AssemblyInfo.cs
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Debug\netcoreapp2.0\Borderlands2Guns.dll
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Debug\netcoreapp2.0\Borderlands2Guns.pdb
