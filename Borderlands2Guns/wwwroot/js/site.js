@@ -21,7 +21,6 @@ $(document).ready(function () {
         });
     });
 
-
     $("#damage, #accuracy,  #firerate, #reloadspeed, #magazinesize, #elementalDamagePerSecond, #chance").on("keyup", function () {
 
         var damage = $("#damage").val();
@@ -47,7 +46,7 @@ $(document).ready(function () {
 
     });
 
-
+    $("#indexpage").DataTable();
 
 
 
