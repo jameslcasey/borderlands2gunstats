@@ -80,18 +80,30 @@ namespace Borderlands2Guns.Controllers
         }
 
         // GET: Guns
-        public async Task<IActionResult> Index(string ss)
+        //public async Task<IActionResult> Index(string ss)
+        //{
+
+        //    var guns = from g in _context.Guns select g;
+
+        //    if (!String.IsNullOrEmpty(ss))
+        //    {
+        //        guns = guns.Where(s => s.Name.Contains(ss));
+        //    }
+
+        //    return View(await guns.ToListAsync());
+        //}
+
+        [HttpGet]
+        public IActionResult Index()
         {
-
             var guns = from g in _context.Guns select g;
-
-            if (!String.IsNullOrEmpty(ss))
-            {
-                guns = guns.Where(s => s.Name.Contains(ss));
-            }
-
-            return View(await guns.ToListAsync());
+            guns = guns.Select(g => g).OrderByDescending(o => o.DamageOnTarget);
+            ViewData["guns"] = JsonConvert.SerializeObject(guns);
+            return View();
         }
+
+
+
 
         // GET: Guns/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -219,5 +231,16 @@ namespace Borderlands2Guns.Controllers
         {
             return _context.Guns.Any(e => e.Id == id);
         }
+
+
+        //everytime a gun is created or updated or deleted the rankings need to be calculated.
+        /*
+         rankings include all types DOT, all types ElementalDamageOnTargetTimesDamagePerSecondTimesChance.
+         rankings per type, rankings per elemental
+         */
+
+
+
+
     }
 }

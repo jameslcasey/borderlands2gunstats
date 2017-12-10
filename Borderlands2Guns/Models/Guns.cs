@@ -185,9 +185,13 @@ namespace Borderlands2Guns.Models
         }
 
 
+        public int AllTypesDamageOnTargetRank { get; set; }
 
+        //each type DamageOnTargetRank
 
+        public int AllTypesElementalDamageOnTargetRank { get; set; }
 
+        //each type ElementalDamageOnTargetRank
     }
 
 
