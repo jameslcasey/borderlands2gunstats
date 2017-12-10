@@ -12,10 +12,8 @@ $(document).ready(function () {
 
         $.get("GunNameSearch?ss=" + term, function (data, status) {
             var json = $.parseJSON(data);
-            console.log(json);
-
             for (var i = 0; i < json.length; i++) {
-                resultsDiv.append("<div class='row'> <div class='col-md-1'>" + json[i].Level + "</div> <div class='col-md-6'>" + json[i].Name + "</div> <div class='col-md-2'>" + json[i].DamageOnTarget + "</div> </div>");
+                resultsDiv.append("<div class='row'> <div class='col-md-1'>" + json[i].Level + "</div> <div class='col-md-4'>" + json[i].Name + "</div> <div class='col-md-2'>" + json[i].DamageOnTarget + "</div> <div class='col-md-2'>" + json[i].AllTypesDamageOnTargetRank + "</div> </div>");
             }
 
         });

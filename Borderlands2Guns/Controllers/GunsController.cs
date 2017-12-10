@@ -16,17 +16,20 @@ namespace Borderlands2Guns.Controllers
 
         public GunsController(Borderlands2GunsContext context)
         {
+            context.Database.ExecuteSqlCommand("exec CalculateRanks");
             _context = context;
         }
 
         [HttpGet]
         public string GunNameSearch(string ss)
         {
-            var guns = from g in _context.Guns select g;
+            var guns = from g in _context.Guns orderby g.AllTypesDamageOnTargetRank select g;
 
             if (!String.IsNullOrEmpty(ss))
             {
-                guns = guns.Where(s => s.Name.Contains(ss)).OrderByDescending(o => o.DamageOnTarget);
+                guns = guns
+                    .Where(s => s.Name.Contains(ss))
+                    .OrderBy(o => o.AllTypesDamageOnTargetRank);
             }
 
             return JsonConvert.SerializeObject(guns);
@@ -96,8 +99,7 @@ namespace Borderlands2Guns.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var guns = from g in _context.Guns select g;
-            guns = guns.Select(g => g).OrderByDescending(o => o.DamageOnTarget);
+            var guns = from g in _context.Guns orderby g.AllTypesDamageOnTargetRank select g;
             ViewData["guns"] = JsonConvert.SerializeObject(guns);
             return View();
         }
@@ -142,6 +144,7 @@ namespace Borderlands2Guns.Controllers
             {
                 _context.Add(guns);
                 await _context.SaveChangesAsync();
+                _context.Database.ExecuteSqlCommand("exec CalculateRanks");
                 return RedirectToAction(nameof(Create));
             }
             return View(guns);
@@ -231,15 +234,6 @@ namespace Borderlands2Guns.Controllers
         {
             return _context.Guns.Any(e => e.Id == id);
         }
-
-
-        //everytime a gun is created or updated or deleted the rankings need to be calculated.
-        /*
-         rankings include all types DOT, all types ElementalDamageOnTargetTimesDamagePerSecondTimesChance.
-         rankings per type, rankings per elemental
-         */
-
-
 
 
     }

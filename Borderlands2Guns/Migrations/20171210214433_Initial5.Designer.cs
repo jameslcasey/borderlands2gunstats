@@ -11,9 +11,10 @@ using System;
 namespace Borderlands2Guns.Migrations
 {
     [DbContext(typeof(Borderlands2GunsContext))]
-    partial class Borderlands2GunsContextModelSnapshot : ModelSnapshot
+    [Migration("20171210214433_Initial5")]
+    partial class Initial5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
