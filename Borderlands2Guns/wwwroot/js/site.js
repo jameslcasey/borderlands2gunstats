@@ -2,20 +2,21 @@
 
 $(document).ready(function () {
 
-    $("#mytable").DataTable();
+    var resultsDiv = $("#searchResults");
 
     $("#gunname").on("keyup", function () {
 
+        resultsDiv.empty();
+
         var term = $(this).val();
+
         $.get("GunNameSearch?ss=" + term, function (data, status) {
-
-
             var json = $.parseJSON(data);
-
             console.log(json);
 
-
-            $("#gunSearchResults").html(data);
+            for (var i = 0; i < json.length; i++) {
+                resultsDiv.append("<div class='row'> <div class='col-md-1'>" + json[i].Level + "</div> <div class='col-md-6'>" + json[i].Name + "</div> <div class='col-md-2'>" + json[i].DamageOnTarget + "</div> </div>");
+            }
 
         });
     });
