@@ -1,0 +1,19 @@
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=Borderlands2Guns
+--content-root=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Guns\Create.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Guns\Delete.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Guns\Details.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Guns\Edit.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Guns\Index.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Home\About.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Home\Contact.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Home\Index-orginal.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Home\Index.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Shared\Error.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Shared\GunSearchResults.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Shared\_Layout.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\_ViewImports.cshtml
+--file=C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\Views\_ViewStart.cshtml

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "961cfa27e0b4c2d56665b8741a13d88fbc0da872"
+    "signature": "1e78fc3a18bf3b8842e946b8863322127c4e7c5e"
   },
   "compilationOptions": {
     "defines": [
@@ -23,11 +23,13 @@
     ".NETCoreApp,Version=v2.0": {
       "Borderlands2Guns/1.0.0": {
         "dependencies": {
+          "BuildBundlerMinifier": "2.6.362",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
-          "jQuery.Validation": "1.16.0"
+          "jQuery.Validation": "1.16.0",
+          "jquery.datatables": "1.10.15"
         },
         "runtime": {
           "Borderlands2Guns.dll": {}
@@ -36,10 +38,16 @@
           "Borderlands2Guns.dll": {}
         }
       },
-      "jQuery/1.4.4": {},
+      "BuildBundlerMinifier/2.6.362": {},
+      "jQuery/1.7.0": {},
+      "jquery.datatables/1.10.15": {
+        "dependencies": {
+          "jQuery": "1.7.0"
+        }
+      },
       "jQuery.Validation/1.16.0": {
         "dependencies": {
-          "jQuery": "1.4.4"
+          "jQuery": "1.7.0"
         }
       },
       "Libuv/1.10.0": {
@@ -4246,12 +4254,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "jQuery/1.4.4": {
+    "BuildBundlerMinifier/2.6.362": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kexCeYIZehR5fRjo8CK1sngN5SZEQRFNfCYZHMS1RxwEEiSKetBw/gliYJcLJdJEBB+e9aHqleLCjuaSI7u23g==",
-      "path": "jquery/1.4.4",
-      "hashPath": "jquery.1.4.4.nupkg.sha512"
+      "sha512": "sha512-J8vHrhvkvBAkzf5eA0zDu9Z4RbVlA8lYWGq0UyvWh98kKpqQZpzUe3yC89Rq9nQyiO0pdULrPPs9sSmx+xq8jA==",
+      "path": "buildbundlerminifier/2.6.362",
+      "hashPath": "buildbundlerminifier.2.6.362.nupkg.sha512"
+    },
+    "jQuery/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UEZuBreHZNLao3z9zNPeSadyoPwKDP/5kFh+Mn1Pm9ZS0czk7bv0O6RreloGSIMAfTLZCiigNkuPb2bXKtUM+g==",
+      "path": "jquery/1.7.0",
+      "hashPath": "jquery.1.7.0.nupkg.sha512"
+    },
+    "jquery.datatables/1.10.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9zRZ5zYafJHOwLU6sWoTM/agRx/dlu0HGQpGD/hEvqSEUJhSQjqJNTq77I97B+LCbh4eJrmNDS9PENiYY+0Isg==",
+      "path": "jquery.datatables/1.10.15",
+      "hashPath": "jquery.datatables.1.10.15.nupkg.sha512"
     },
     "jQuery.Validation/1.16.0": {
       "type": "package",

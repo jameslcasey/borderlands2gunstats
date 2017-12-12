@@ -184,12 +184,12 @@ namespace Borderlands2Guns.Models
             }
         }
 
-
-
-
+        public int AllTypesDamageOnTargetRank { get; set; }
+        public int EachTypeDamageOnTargetRank { get; set; }
+        public int AllTypesElementalDamageOnTargetRank { get; set; }
+        public int EachElementalTypeDamageOnTargetRank { get; set; }
 
     }
-
 
     public enum GunType
     {
@@ -222,5 +222,26 @@ namespace Borderlands2Guns.Models
         Shock=3,
         Slag=4
     }
+
+
+    public class StoredProcedures
+    {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

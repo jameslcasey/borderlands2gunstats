@@ -27,6 +27,10 @@ namespace Borderlands2Guns.Migrations
 
                     b.Property<decimal>("Accuracy");
 
+                    b.Property<int>("AllTypesDamageOnTargetRank");
+
+                    b.Property<int>("AllTypesElementalDamageOnTargetRank");
+
                     b.Property<int>("Brand");
 
                     b.Property<decimal>("Chance");
@@ -40,6 +44,10 @@ namespace Borderlands2Guns.Migrations
                     b.Property<decimal>("DamageTimesFireRateTimesMagazineSize");
 
                     b.Property<decimal>("DamageTimesFireRateTimesMagazineSizePerReloadSpeed");
+
+                    b.Property<int>("EachElementalTypeDamageOnTargetRank");
+
+                    b.Property<int>("EachTypeDamageOnTargetRank");
 
                     b.Property<decimal>("ElementalDamageOnTargetTimesDamagePerSecondTimesChance");
 
