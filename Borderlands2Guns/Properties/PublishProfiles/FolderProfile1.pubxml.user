@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Release\PublishOutput\win10-x64</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\bin\Release\PublishOutput\ubuntu-x64</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <DestinationConnectionStrings Include="Borderlands2GunsContext">

@@ -1,0 +1,126 @@
+﻿@model Borderlands2Guns.Models.Guns
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Guns</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Damage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Damage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FireRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FireRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReloadSpeed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReloadSpeed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MagazineSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MagazineSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageTimesFireRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DamageTimesFireRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageTimesFireRateTimesMagazineSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DamageTimesFireRateTimesMagazineSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageTimesFireRateTimesMagazineSizePerReloadSpeed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DamageTimesFireRateTimesMagazineSizePerReloadSpeed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DamageOnTarget)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DamageOnTarget)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementalEffect)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ElementalEffect)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementalDamagePerSecond)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ElementalDamagePerSecond)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Chance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Chance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementalDamagePerSecondTimesChance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ElementalDamagePerSecondTimesChance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementalDamageOnTargetTimesDamagePerSecondTimesChance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ElementalDamageOnTargetTimesDamagePerSecondTimesChance)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
