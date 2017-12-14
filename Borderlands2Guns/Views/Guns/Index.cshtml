@@ -1,14 +1,49 @@
 ﻿
+@section styles {
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+}
+
+
 
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-12">
         <p></p>
-
         <a href="~/Guns/Create">Create</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div id="guns-index">
+
+
     </div>
 
 </div>
 
+<table id="guns-index-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    
+
+    <tfoot>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </tfoot>
 
 
+
+</table>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+}

@@ -2,6 +2,30 @@
 
 $(document).ready(function () {
 
+
+    //index...
+    var guns = [];
+
+    $.get("/Guns/IndexData", function (data, status) {
+        guns = $.parseJSON(data);
+    });
+
+    console.log(guns)
+
+    $("#guns-index-table").DataTable({
+        "ajax": guns,
+        "columns": [
+            {"guns":"name"}
+        ]
+    });
+
+    (function () {
+
+    })();
+
+
+
+    //create.begin...
     var resultsDiv = $("#searchResults");
 
     $("#gunname").on("keyup", function () {
@@ -43,8 +67,10 @@ $(document).ready(function () {
         });
 
     });
+    //create.end...
 
-    $("#indexpage").DataTable();
+
+
 
 
 

@@ -82,6 +82,21 @@ namespace Borderlands2Guns.Controllers
             return Json(guns.ToList());
         }
 
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public JsonResult IndexData()
+        {
+            var guns = from g in _context.Guns orderby g.DamageOnTarget descending select g;
+            return Json(guns.ToList());
+        }
+
+
+
         // GET: Guns
         //public async Task<IActionResult> Index(string ss)
         //{
@@ -96,13 +111,13 @@ namespace Borderlands2Guns.Controllers
         //    return View(await guns.ToListAsync());
         //}
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            var guns = from g in _context.Guns orderby g.AllTypesDamageOnTargetRank select g;
-            ViewData["guns"] = JsonConvert.SerializeObject(guns);
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+        //    var guns = from g in _context.Guns orderby g.AllTypesDamageOnTargetRank select g;
+        //    ViewData["guns"] = JsonConvert.SerializeObject(guns);
+        //    return View();
+        //}
 
 
 
