@@ -3,25 +3,37 @@
 $(document).ready(function () {
 
 
-    //index...
-    var guns = [];
+    //index.begin....
 
-    $.get("/Guns/IndexData", function (data, status) {
-        guns = $.parseJSON(data);
-    });
+    $("#gunlist").DataTable();
 
-    console.log(guns)
+    //index.end.
 
-    $("#guns-index-table").DataTable({
-        "ajax": guns,
+
+    //index1.begin..
+    /*
+    var gunIndexTable = $("#guns-index-table").DataTable({
+        "processing":true,
+        "serverSide": true,
+        "ajax": {
+            "url": "/Guns/IndexData",
+            "type":'GET'
+        },
         "columns": [
-            {"guns":"name"}
+            {"data":"name"}
+        ],
+        "columnsDefs": [
+            {
+                "targets": 0,
+                "searchable": true
+            }
         ]
     });
 
-    (function () {
+    console.log(gunIndexTable);
+    */
 
-    })();
+    //index1.end.
 
 
 
@@ -67,7 +79,7 @@ $(document).ready(function () {
         });
 
     });
-    //create.end...
+    //create.end.
 
 
 

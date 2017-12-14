@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -171,7 +172,10 @@ namespace Borderlands2Guns.Models
             }
         }
 
+        
         private decimal _elementalDamageOnTargetTimesDamagePerSecondTimesChance;
+
+        [DisplayName("ElementalDOT")]
         public decimal ElementalDamageOnTargetTimesDamagePerSecondTimesChance
         {
             get
@@ -184,9 +188,16 @@ namespace Borderlands2Guns.Models
             }
         }
 
+        [DisplayName("AllTypesRank")]
         public int AllTypesDamageOnTargetRank { get; set; }
+
+        [DisplayName("EachTypeRank")]
         public int EachTypeDamageOnTargetRank { get; set; }
+
+        [DisplayName("E-AllTypesRank")]
         public int AllTypesElementalDamageOnTargetRank { get; set; }
+
+        [DisplayName("E-EachTypeRank")]
         public int EachElementalTypeDamageOnTargetRank { get; set; }
 
     }
