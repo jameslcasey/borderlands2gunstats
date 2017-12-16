@@ -5,7 +5,14 @@ $(document).ready(function () {
 
     //index.begin....
 
-    $("#gunlist").DataTable();
+    $("#gunlist").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'colvis',
+            'excel',
+            'print'
+        ]
+    } );
 
     //index.end.
 

@@ -122,6 +122,7 @@ namespace Borderlands2Guns.Models
         }
 
         private decimal _damageOnTarget;
+        [DisplayName("Damage On Target")]
         public decimal DamageOnTarget {
             get {
                 return this._damageOnTarget;
@@ -175,7 +176,7 @@ namespace Borderlands2Guns.Models
         
         private decimal _elementalDamageOnTargetTimesDamagePerSecondTimesChance;
 
-        [DisplayName("ElementalDOT")]
+        [DisplayName("Elemental DOT")]
         public decimal ElementalDamageOnTargetTimesDamagePerSecondTimesChance
         {
             get
@@ -227,7 +228,6 @@ namespace Borderlands2Guns.Models
 
     public enum ElementalEffect
     {
-        None=-1,
         Corrosive=0,
         Explosive=1,
         Incendiary=2,

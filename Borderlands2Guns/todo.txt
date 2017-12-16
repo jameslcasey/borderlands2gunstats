@@ -1,8 +1,9 @@
 - move search box on index page to the right.
-- remove none from enum.
-- set elemental defaults to zero.
-- make create page inputs fit on screen without scrolling.
-- put a back to list link on at the top of create page or on toolbar.
+x- remove none from enum.
+x- set elemental defaults to zero.
+x- make create page inputs fit on screen without scrolling.
+x- put a back to list link on at the top of create page 
+- back to list on toolbar.
 - add other ranks to create page.
 - have a page for top guns per type and include overall on page.
 - make the damage input box able to calculate.
