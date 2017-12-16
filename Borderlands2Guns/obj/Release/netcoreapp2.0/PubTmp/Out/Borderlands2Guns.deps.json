@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "311f3b4e8813971959e807440fda6293ba7f3444"
+    "signature": "2ad72c3f5ef05958cf21eaf0b4e5b7ee0294fb41"
   },
   "compilationOptions": {
     "defines": [
@@ -23,10 +23,12 @@
     ".NETCoreApp,Version=v2.0": {
       "Borderlands2Guns/1.0.0": {
         "dependencies": {
+          "BuildBundlerMinifier": "2.6.362",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
+          "Twitter.Bootstrap.Bootswatch.Superhero": "3.2.0",
           "jQuery.Validation": "1.16.0",
           "jquery.datatables": "1.10.15"
         },
@@ -37,6 +39,7 @@
           "Borderlands2Guns.dll": {}
         }
       },
+      "BuildBundlerMinifier/2.6.362": {},
       "jQuery/1.7.0": {},
       "jquery.datatables/1.10.15": {
         "dependencies": {
@@ -4054,6 +4057,7 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "Twitter.Bootstrap.Bootswatch.Superhero/3.2.0": {},
       "WindowsAzure.Storage/8.1.4": {
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
@@ -4251,6 +4255,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BuildBundlerMinifier/2.6.362": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J8vHrhvkvBAkzf5eA0zDu9Z4RbVlA8lYWGq0UyvWh98kKpqQZpzUe3yC89Rq9nQyiO0pdULrPPs9sSmx+xq8jA==",
+      "path": "buildbundlerminifier/2.6.362",
+      "hashPath": "buildbundlerminifier.2.6.362.nupkg.sha512"
     },
     "jQuery/1.7.0": {
       "type": "package",
@@ -6563,6 +6574,13 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Twitter.Bootstrap.Bootswatch.Superhero/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2SJ+44HncqD5QZw0gY5VG3e5wOiLWnsw0eMU/fd1jnz2MCMSZhKSyAzwVimyTy/Ihht/7/ZCJn8VCyVy+c3B6w==",
+      "path": "twitter.bootstrap.bootswatch.superhero/3.2.0",
+      "hashPath": "twitter.bootstrap.bootswatch.superhero.3.2.0.nupkg.sha512"
     },
     "WindowsAzure.Storage/8.1.4": {
       "type": "package",

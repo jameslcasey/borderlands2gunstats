@@ -82,27 +82,46 @@ namespace Borderlands2Guns.Controllers
             return Json(guns.ToList());
         }
 
-        // GET: Guns
-        //public async Task<IActionResult> Index(string ss)
+        //[HttpGet]
+        //public IActionResult Index()
         //{
-
-        //    var guns = from g in _context.Guns select g;
-
-        //    if (!String.IsNullOrEmpty(ss))
-        //    {
-        //        guns = guns.Where(s => s.Name.Contains(ss));
-        //    }
-
-        //    return View(await guns.ToListAsync());
+        //    return View();
         //}
 
-        [HttpGet]
-        public IActionResult Index()
+        //[HttpGet]
+        //public JsonResult IndexData()
+        //{
+        //    var guns = from g in _context.Guns orderby g.DamageOnTarget descending select g;
+        //    var result = new Dictionary<string, List<Guns>>
+        //    {
+        //        { "data", guns.ToList() }
+        //    };
+        //    return Json(result);
+        //}
+
+
+
+        // GET: Guns
+        public async Task<IActionResult> Index(string ss)
         {
-            var guns = from g in _context.Guns orderby g.AllTypesDamageOnTargetRank select g;
-            ViewData["guns"] = JsonConvert.SerializeObject(guns);
-            return View();
+
+            var guns = from g in _context.Guns orderby g.DamageOnTarget descending select g;
+
+            if (!String.IsNullOrEmpty(ss))
+            {
+                guns = guns.Where(s => s.Name.Contains(ss)).OrderByDescending(o => o.DamageOnTarget);
+            }
+
+            return View(await guns.ToListAsync());
         }
+
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+        //    var guns = from g in _context.Guns orderby g.AllTypesDamageOnTargetRank select g;
+        //    ViewData["guns"] = JsonConvert.SerializeObject(guns);
+        //    return View();
+        //}
 
 
 
