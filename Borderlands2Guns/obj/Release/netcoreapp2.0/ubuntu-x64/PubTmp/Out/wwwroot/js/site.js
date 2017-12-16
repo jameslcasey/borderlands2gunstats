@@ -2,6 +2,42 @@
 
 $(document).ready(function () {
 
+
+    //index.begin....
+
+    $("#gunlist").DataTable();
+
+    //index.end.
+
+
+    //index1.begin..
+    /*
+    var gunIndexTable = $("#guns-index-table").DataTable({
+        "processing":true,
+        "serverSide": true,
+        "ajax": {
+            "url": "/Guns/IndexData",
+            "type":'GET'
+        },
+        "columns": [
+            {"data":"name"}
+        ],
+        "columnsDefs": [
+            {
+                "targets": 0,
+                "searchable": true
+            }
+        ]
+    });
+
+    console.log(gunIndexTable);
+    */
+
+    //index1.end.
+
+
+
+    //create.begin...
     var resultsDiv = $("#searchResults");
 
     $("#gunname").on("keyup", function () {
@@ -43,8 +79,10 @@ $(document).ready(function () {
         });
 
     });
+    //create.end.
 
-    $("#indexpage").DataTable();
+
+
 
 
 

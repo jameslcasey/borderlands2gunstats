@@ -227,6 +227,7 @@ namespace Borderlands2Guns.Models
 
     public enum ElementalEffect
     {
+        None=-1,
         Corrosive=0,
         Explosive=1,
         Incendiary=2,
