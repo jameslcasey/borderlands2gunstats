@@ -16,7 +16,7 @@ namespace Borderlands2Guns.Controllers
 
         public GunsController(Borderlands2GunsContext context)
         {
-            context.Database.ExecuteSqlCommand("exec CalculateRanks");
+            context.Database.ExecuteSqlCommand("exec UpdateRanks");
             _context = context;
         }
 
@@ -161,7 +161,7 @@ namespace Borderlands2Guns.Controllers
             {
                 _context.Add(guns);
                 await _context.SaveChangesAsync();
-                _context.Database.ExecuteSqlCommand("exec CalculateRanks");
+                _context.Database.ExecuteSqlCommand("exec UpdateRanks");
                 return RedirectToAction(nameof(Create));
             }
             return View(guns);

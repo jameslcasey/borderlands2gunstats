@@ -10,6 +10,7 @@
 - calculate the rank before gun in saved. show on create/edit/delete pages. (create another proc to do this.)
 - need to be able to compare guns.
 - create list of all guns currently using.
+- dark theme.
 
 
 
