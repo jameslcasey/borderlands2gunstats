@@ -147,8 +147,6 @@ namespace Borderlands2Guns.Controllers
         // GET: Guns/Create
         public IActionResult Create()
         {
-
-
             return View();
         }
 
