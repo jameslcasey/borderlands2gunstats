@@ -8,3 +8,8 @@ x- put a back to list link on at the top of create page
 - have a page for top guns per type and include overall on page.
 - make the damage input box able to calculate.
 - index page, highlight on mouse over.
+- trim all inputs.
+- fix edit page, accuracy to whole number.
+- format number on all pages.
+- fixing the gun calc for edit page breaks it for create page, and visa versa.
+- calculate the rank before gun in saved. show on create/edit/delete pages.
