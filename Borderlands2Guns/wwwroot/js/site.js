@@ -45,6 +45,26 @@ $(document).ready(function () {
 
 
     //create.begin...
+
+    $("#damage").on("blur", function () {
+
+        var content = $(this).val();
+        var numbers = content.split("*");
+        var numbers_length = numbers.length;
+        var result = 1;
+
+        if (numbers_length > 1) {
+            for (var i = 0; i < numbers_length; i++) {
+                result *= numbers[i];
+            }
+            $(this).val(result);
+        }
+        else
+        {
+            $(this).val(content);
+        }
+    });
+
     var resultsDiv = $("#searchResults");
 
     $("#gunname").on("keyup", function () {
