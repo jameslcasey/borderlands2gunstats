@@ -11,7 +11,18 @@ namespace Borderlands2Guns.Models
     public class Guns
     {
         public int Id {get;set;}
-        public string Name { get; set; }
+
+        private string _name;
+        public string Name {
+            get{
+                return _name;
+            }
+             set {
+                _name = value.Trim();
+            }
+        }
+
+
         public int Level { get; set; }
         public GunType Type { get; set; }
         public Brand Brand { get; set; }
@@ -42,8 +53,8 @@ namespace Borderlands2Guns.Models
             }
             set {
                 //calc DamageOnTarget...
-                _accuracy = (value/100);
-                DamageOnTarget = (value/100) * DamageTimesFireRateTimesMagazineSizePerReloadSpeed;
+                _accuracy = value;
+                DamageOnTarget = value * DamageTimesFireRateTimesMagazineSizePerReloadSpeed;
             }
         }
 
@@ -116,13 +127,14 @@ namespace Borderlands2Guns.Models
             set {
                 //calc DamageOnTarget
                 _damageTimesFireRateTimesMagazineSizePerReloadSpeed = value;
-                DamageOnTarget = Accuracy * value;
+                DamageOnTarget = (Accuracy /100) * value;
 
             }
         }
 
         private decimal _damageOnTarget;
         [DisplayName("Damage On Target")]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public decimal DamageOnTarget {
             get {
                 return this._damageOnTarget;
@@ -177,6 +189,7 @@ namespace Borderlands2Guns.Models
         private decimal _elementalDamageOnTargetTimesDamagePerSecondTimesChance;
 
         [DisplayName("Elemental DOT")]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public decimal ElementalDamageOnTargetTimesDamagePerSecondTimesChance
         {
             get

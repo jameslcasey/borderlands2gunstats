@@ -91,8 +91,9 @@ $(document).ready(function () {
         var magazinesize = $("#magazinesize").val();
         var elementalDamagePerSecond = $("#elementalDamagePerSecond").val();
         var chance = $("#chance").val();
+        var hostname = window.location.hostname;
 
-        $.get("GunCalcs?damage=" + damage + "&accuracy=" + accuracy + "&firerate=" + firerate + "&reloadspeed=" + reloadspeed + "&magazinesize=" + magazinesize + "&elementalDamagePerSecond=" + elementalDamagePerSecond + "&chance=" + chance, function (data, status) {
+        $.get("/Guns/GunCalcs?damage=" + damage + "&accuracy=" + accuracy + "&firerate=" + firerate + "&reloadspeed=" + reloadspeed + "&magazinesize=" + magazinesize + "&elementalDamagePerSecond=" + elementalDamagePerSecond + "&chance=" + chance, function (data, status) {
 
             var json = $.parseJSON(data);
             $("#damageTimesFireRate").val(json["DamageTimesFireRate"]);
