@@ -33,3 +33,14 @@
         display: none;
     }
 }
+
+
+td, a td {
+    color:black;
+}
+
+td:hover {
+    color:white;
+}
+
+
