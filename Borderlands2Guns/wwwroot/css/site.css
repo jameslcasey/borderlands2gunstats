@@ -35,12 +35,10 @@
 }
 
 
-td, a td {
-    color:black;
+td, a td, .table a:not(.btn) {
+    color: black;
 }
 
-td:hover {
+input:read-only {
     color:white;
 }
-
-
