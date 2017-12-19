@@ -6,11 +6,16 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 }
 <div class="row">
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <a class="form-control btn btn-info" asp-action="Index">Back to List</a>
+
+    <div class="col-md-12">
+
+        <div class="form-row">
+            <div class="form-group col-md-1">
+                <a class="form-control btn btn-info" asp-action="Index">Back to List</a>
+            </div>
         </div>
     </div>
+
 </div>
 
 <p></p>
@@ -58,32 +63,44 @@
                 <div class="form-group col-md-2">
                     <label asp-for="Damage" class="control-label"></label>
                     <input id="damage" asp-for="Damage" class="form-control" type="text" />
+                    <span id="damage-rank-all" data-role="rankall" class="badge badge-light"></span>
+                    <span id="damage-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="Damage" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-2">
                     <label asp-for="Accuracy" class="control-label"></label>
                     <input id="accuracy" asp-for="Accuracy" class="form-control" />
+                    <span id="accuracy-rank-all" data-role="rankall" class="badge badge-light"></span>
+                    <span id="accuracy-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="Accuracy" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-2">
                     <label asp-for="FireRate" class="control-label"></label>
                     <input id="firerate" asp-for="FireRate" class="form-control" />
+                    <span id="firerate-rank-all" data-role="rankall" class="badge badge-light"></span>
+                    <span id="firerate-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="FireRate" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-2">
                     <label asp-for="ReloadSpeed" class="control-label"></label>
                     <input id="reloadspeed" asp-for="ReloadSpeed" class="form-control" />
+                    <span id="reloadspeed-rank-all" data-role="rankall" class="badge badge-light"></span>
+                    <span id="reloadspeed-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="ReloadSpeed" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-2">
                     <label asp-for="MagazineSize" class="control-label"></label>
                     <input id="magazinesize" asp-for="MagazineSize" class="form-control" />
+                    <span id="magazinesize-rank-all" data-role="rankall" class="badge badge-light"></span>
+                    <span id="magazinesize-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="MagazineSize" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-2">
                     <div class="alert alert-info" role="alert">
                         <label asp-for="DamageOnTarget" class="control-label"></label>
                         <input id="damageOnTarget" asp-for="DamageOnTarget" class="form-control" readonly />
+                        <span id="damageOnTarget-rank-all" data-role="rankall" class="badge badge-light"></span>
+                        <span id="damageOnTarget-rank-type" data-role="ranktype" class="badge badge-light"></span>
                         <span asp-validation-for="DamageOnTarget" class="text-danger"></span>
                     </div>
                 </div>
@@ -119,6 +136,8 @@
                     <div class="alert alert-info" role="alert">
                         <label asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="control-label"></label>
                         <input id="elementalDamageOnTargetTimesDamagePerSecondTimesChance" asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="form-control" readonly />
+                        <span id="Edot-rank-all" data-role="rankall" class="badge badge-light"></span>
+                        <span id="Edot-rank-type" data-role="ranktype" class="badge badge-light"></span>
                         <span asp-validation-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="text-danger"></span>
                     </div>
                 </div>
@@ -127,7 +146,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Create" class="btn btn-default float-right" />
                 </div>
             </div>
         
@@ -136,20 +155,32 @@
     </div>
     <div id="searchResults" class="col-md-6">
     </div>
-</div>
 
-<div class="row">
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <a class="form-control btn btn-info" asp-action="Index">Back to List</a>
+    <div class="col-md-6">
+
+        <div class="form-row">
+
+            <div class="form-group col-md-2">
+                <a class="form-control btn btn-info" asp-action="Index">Back to List</a>
+            </div>
+
+            <div id="prerank" class="form-group  col-md-10">
+
+            </div>
+
         </div>
+
+
     </div>
+
+
 </div>
 
 
 
-        @section Scripts {
-            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-            <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
-        }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+}

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Borderlands2Guns.Models;
 using Newtonsoft.Json;
+using System.Data.SqlClient;
 
 namespace Borderlands2Guns.Controllers
 {
@@ -19,6 +20,19 @@ namespace Borderlands2Guns.Controllers
             context.Database.ExecuteSqlCommand("exec UpdateRanks");
             _context = context;
         }
+
+        [HttpGet]
+        public string MetricRank(string metric, decimal value, int type)
+        {
+            var x = _context.Database.ExecuteSqlCommand("exec MetricRanks @metric, @value, @type", 
+                new SqlParameter("@metric", metric),
+                new SqlParameter("@value", value),
+                new SqlParameter("@type", type));
+
+
+            return JsonConvert.SerializeObject(x);
+        }
+
 
         [HttpGet]
         public string GunNameSearch(string ss)

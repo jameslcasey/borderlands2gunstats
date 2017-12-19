@@ -10,7 +10,8 @@
 - calculate the rank before gun in saved. show on create/edit/delete pages. (create another proc to do this.)
 - need to be able to compare guns.
 - create list of all guns currently using.
-- dark theme.
+- search box on menu bar working.
+- ranks for each metric updated on blur. [x/x][x/x] overall rank and type rank.
 
 
 
@@ -22,3 +23,4 @@ x- make the damage input box able to calculate.
 x- trim name input.
 x- fix edit page, accuracy to whole number.
 x- fixing the gun calc for edit page breaks it for create page, and visa versa.
+x- dark theme.
