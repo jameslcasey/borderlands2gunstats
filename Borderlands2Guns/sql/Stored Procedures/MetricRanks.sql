@@ -65,7 +65,7 @@ BEGIN
 	INTO #rankings1
 	FROM @AllGuns g;
 
-	SELECT * FROM #rankings1 r;
+	SELECT * FROM #rankings1 r WHERE r.Id = @temp_id;
 	DROP TABLE #rankings1;
 
 END
@@ -85,7 +85,7 @@ BEGIN
 	INTO #rankings2
 	FROM @AllGuns g;
 
-	SELECT * FROM #rankings2 r;
+	SELECT * FROM #rankings2 r WHERE r.Id = @temp_id;
 	DROP TABLE #rankings2;
 
 END
@@ -105,7 +105,7 @@ BEGIN
 	INTO #rankings3
 	FROM @AllGuns g;
 
-	SELECT * FROM #rankings3 r;
+	SELECT * FROM #rankings3 r WHERE r.Id = @temp_id;
 	DROP TABLE #rankings3;
 
 END
@@ -125,7 +125,7 @@ BEGIN
 	INTO #rankings4
 	FROM @AllGuns g;
 
-	SELECT * FROM #rankings4 r;
+	SELECT * FROM #rankings4 r WHERE r.Id = @temp_id;
 	DROP TABLE #rankings4;
 
 END
@@ -145,7 +145,7 @@ BEGIN
 	INTO #rankings5
 	FROM @AllGuns g;
 
-	SELECT * FROM #rankings5 r;
+	SELECT * FROM #rankings5 r WHERE r.Id = @temp_id;
 	DROP TABLE #rankings5;
 
 END
@@ -165,7 +165,7 @@ BEGIN
 	INTO #rankings6
 	FROM @AllGuns g;
 
-	SELECT * FROM #rankings6 r;
+	SELECT * FROM #rankings6 r WHERE r.Id = @temp_id;
 	DROP TABLE #rankings6;
 
 END
