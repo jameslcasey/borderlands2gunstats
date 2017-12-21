@@ -60,6 +60,8 @@ BEGIN
 
 	SELECT 
 		g.Id, 
+		(select count(ag.Id) from @AllGuns ag) allrankcount,
+		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.Damage DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.Damage DESC) typerank
 	INTO #rankings1
@@ -73,13 +75,15 @@ ELSE IF @metric = 'accuracy'
 BEGIN
 
 	INSERT INTO @AllGuns( Id, [Type], Accuracy )
-	VALUES( 999999, @type, @value);
+	VALUES( @temp_id, @type, @value);
 	INSERT INTO @AllGuns( Id, [Type], Accuracy )
 		   SELECT ag.Id, ag.Type, ag.Accuracy 
 		   FROM #AllGuns AS ag;
 
 	SELECT 
 		g.Id, 
+		(select count(ag.Id) from @AllGuns ag) allrankcount,
+		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.Accuracy DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.Accuracy DESC) typerank
 	INTO #rankings2
@@ -100,6 +104,8 @@ BEGIN
 
 	SELECT	
 		g.Id, 
+		(select count(ag.Id) from @AllGuns ag) allrankcount,
+		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.FireRate DESC)  allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.FireRate DESC) typerank
 	INTO #rankings3
@@ -120,6 +126,8 @@ BEGIN
 
 	SELECT 
 		g.Id, 
+		(select count(ag.Id) from @AllGuns ag) allrankcount,
+		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.ReloadSpeed DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed DESC) typerank
 	INTO #rankings4
@@ -140,6 +148,8 @@ BEGIN
 
 	SELECT 
 		g.Id, 
+		(select count(ag.Id) from @AllGuns ag) allrankcount,
+		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.MagazineSize DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed DESC) typerank
 	INTO #rankings5
@@ -160,6 +170,8 @@ BEGIN
 
 	SELECT 
 		g.Id, 
+		(select count(ag.Id) from @AllGuns ag) allrankcount,
+		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.DamageOnTarget DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.DamageOnTarget DESC) typerank
 	INTO #rankings6

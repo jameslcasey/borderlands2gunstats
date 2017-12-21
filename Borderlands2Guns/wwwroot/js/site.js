@@ -118,8 +118,9 @@ $(document).ready(function () {
         {
             $.get("/Guns/MetricRank?metric=" + id + "&value=" + content + "&type=" + type, function (data, status) {
                 var json = $.parseJSON(data);
-                $("#damageTimesFireRate").val(json["DamageTimesFireRate"]);
-
+                console.log(json);
+                rankall.text("[" + json["allrank"] + "/"+json["allrankcount"]+"]");
+                ranktype.text("[" + json["typerank"] + "/" + json["typerankcount"] + "]");
             });
         }
 

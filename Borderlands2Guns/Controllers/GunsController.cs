@@ -17,7 +17,7 @@ namespace Borderlands2Guns.Controllers
 
         public GunsController(Borderlands2GunsContext context)
         {
-            context.Database.ExecuteSqlCommand("exec UpdateRanks");
+            //context.Database.ExecuteSqlCommand("exec UpdateRanks");
             _context = context;
         }
 
