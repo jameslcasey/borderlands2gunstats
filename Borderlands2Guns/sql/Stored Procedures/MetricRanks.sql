@@ -38,16 +38,16 @@ BEGIN
 	FROM dbo.Guns AS g;
 
 	DECLARE @AllGuns TABLE
-( 
-						   Id int NULL, 
-						   Damage int null,
-						   Accuracy decimal(18,2) null,
-						   FireRate decimal(18,2) null,
-						   ReloadSpeed decimal(18,2) NULL,
-						   MagazineSize int null,
-						   DamageOnTarget decimal(18, 2) NULL, 
-						   [Type] int NULL
-);
+    ( 
+	   Id int NULL, 
+	   Damage int null,
+	   Accuracy decimal(18,2) null,
+	   FireRate decimal(18,2) null,
+	   ReloadSpeed decimal(18,2) NULL,
+	   MagazineSize int null,
+	   DamageOnTarget decimal(18, 2) NULL, 
+	   [Type] int NULL
+    );
 
 IF @metric = 'damage'
 BEGIN
@@ -62,10 +62,11 @@ BEGIN
 		g.Id, 
 		RANK() OVER(ORDER  BY g.Damage DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.Damage DESC) typerank
-	INTO #rankings
-	FROM @AllGuns g
-	WHERE g.Id = @temp_id;
+	INTO #rankings1
+	FROM @AllGuns g;
 
+	SELECT * FROM #rankings1 r;
+	DROP TABLE #rankings1;
 
 END
 ELSE IF @metric = 'accuracy'
@@ -81,16 +82,18 @@ BEGIN
 		g.Id, 
 		RANK() OVER(ORDER  BY g.Accuracy DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.Accuracy DESC) typerank
-	INTO #rankings
-	FROM @AllGuns AS g
-	WHERE g.Id = @temp_id;
+	INTO #rankings2
+	FROM @AllGuns g;
+
+	SELECT * FROM #rankings2 r;
+	DROP TABLE #rankings2;
 
 END
 ELSE IF @metric = 'firerate'
 BEGIN
 
 	INSERT INTO @AllGuns( Id, [Type], FireRate )
-	VALUES( 999999, @type, @value);
+	VALUES( @temp_id, @type, @value);
 	INSERT INTO @AllGuns( Id, [Type], FireRate )
 		   SELECT ag.Id, ag.Type, ag.FireRate 
 		   FROM #AllGuns AS ag;
@@ -99,16 +102,18 @@ BEGIN
 		g.Id, 
 		RANK() OVER(ORDER  BY g.FireRate DESC)  allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.FireRate DESC) typerank
-	INTO #rankings
-	FROM @AllGuns AS g
-	WHERE g.Id = @temp_id;
+	INTO #rankings3
+	FROM @AllGuns g;
+
+	SELECT * FROM #rankings3 r;
+	DROP TABLE #rankings3;
 
 END
 ELSE IF @metric = 'reloadspeed'
 BEGIN
 
 	INSERT INTO @AllGuns( Id, [Type], ReloadSpeed )
-	VALUES( 999999, @type, @value);
+	VALUES( @temp_id, @type, @value);
 	INSERT INTO @AllGuns( Id, [Type], ReloadSpeed )
 		   SELECT ag.Id, ag.Type, ag.ReloadSpeed 
 		   FROM #AllGuns AS ag;
@@ -117,16 +122,18 @@ BEGIN
 		g.Id, 
 		RANK() OVER(ORDER  BY g.ReloadSpeed DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed DESC) typerank
-	INTO #rankings
-	FROM @AllGuns AS g
-	WHERE g.Id = @temp_id;
+	INTO #rankings4
+	FROM @AllGuns g;
+
+	SELECT * FROM #rankings4 r;
+	DROP TABLE #rankings4;
 
 END
 ELSE IF @metric = 'magazinesize'
 BEGIN
 
 	INSERT INTO @AllGuns( Id, [Type], MagazineSize )
-	VALUES( 999999, @type, @value);
+	VALUES( @temp_id, @type, @value);
 	INSERT INTO @AllGuns( Id, [Type], MagazineSize )
 		   SELECT ag.Id, ag.Type, ag.MagazineSize 
 		   FROM #AllGuns AS ag;
@@ -135,16 +142,18 @@ BEGIN
 		g.Id, 
 		RANK() OVER(ORDER  BY g.MagazineSize DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed DESC) typerank
-	INTO #rankings
-	FROM @AllGuns AS g
-	WHERE g.Id = @temp_id;
+	INTO #rankings5
+	FROM @AllGuns g;
+
+	SELECT * FROM #rankings5 r;
+	DROP TABLE #rankings5;
 
 END
 ELSE IF @metric = 'damageOnTarget'
 BEGIN
 
 	INSERT INTO @AllGuns( Id, [Type], DamageOnTarget )
-	VALUES( 999999, @type, @value);
+	VALUES( @temp_id, @type, @value);
 	INSERT INTO @AllGuns( Id, [Type], DamageOnTarget )
 		   SELECT ag.Id, ag.Type, ag.DamageOnTarget 
 		   FROM #AllGuns AS ag;
@@ -153,20 +162,14 @@ BEGIN
 		g.Id, 
 		RANK() OVER(ORDER  BY g.DamageOnTarget DESC) allrank,
 		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.DamageOnTarget DESC) typerank
-	INTO #rankings
-	FROM @AllGuns AS g
-	WHERE g.Id = @temp_id;
+	INTO #rankings6
+	FROM @AllGuns g;
+
+	SELECT * FROM #rankings6 r;
+	DROP TABLE #rankings6;
 
 END
 	
-	SELECT * FROM #rankings;
-
-	DROP TABLE #rankings;
-	DROP TABLE #AllGuns;
-	DROP TABLE #AllTypeRankings;
-	DROP TABLE #EachTypeRankings;
-	DROP TABLE #AllElementalTypeRankings;
-	DROP TABLE #EachElementalTypeRankings;
 END;
 GO
 	
