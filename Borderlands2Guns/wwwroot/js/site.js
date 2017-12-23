@@ -105,7 +105,7 @@ $(document).ready(function () {
 
     });
 
-    $("#damage, #accuracy,  #firerate, #reloadspeed, #magazinesize").on("blur", function () {
+    $("#damage, #accuracy,  #firerate, #reloadspeed, #magazinesize", "#guntype").on("blur", function () {
 
         var element = $(this);
         var id = element.prop("id");
@@ -119,8 +119,8 @@ $(document).ready(function () {
             $.get("/Guns/MetricRank?metric=" + id + "&value=" + content + "&type=" + type, function (data, status) {
                 var json = $.parseJSON(data);
                 console.log(json);
-                rankall.text("[" + json["allrank"] + "/"+json["allrankcount"]+"]");
-                ranktype.text("[" + json["typerank"] + "/" + json["typerankcount"] + "]");
+                rankall.text("[" + json[0]["allrank"] + "/" + json[0]["allrankcount"]+"]");
+                ranktype.text("[" + json[0]["typerank"] + "/" + json[0]["typerankcount"] + "]");
             });
         }
 

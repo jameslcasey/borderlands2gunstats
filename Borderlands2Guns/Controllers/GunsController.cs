@@ -24,11 +24,13 @@ namespace Borderlands2Guns.Controllers
         [HttpGet]
         public string MetricRank(string metric, decimal value, int type)
         {
-            var x = _context.Database.ExecuteSqlCommand("exec MetricRanks @metric, @value, @type", 
+
+            string sql = "EXEC MetricRanks @metric, @value, @type";
+            var x = _context.MetricRanks.FromSql(sql,
                 new SqlParameter("@metric", metric),
                 new SqlParameter("@value", value),
-                new SqlParameter("@type", type));
-
+                new SqlParameter("@type", type)
+                );
 
             return JsonConvert.SerializeObject(x);
         }

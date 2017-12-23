@@ -14,5 +14,9 @@ namespace Borderlands2Guns.Models
         }
 
         public DbSet<Borderlands2Guns.Models.Guns> Guns { get; set; }
+        public DbSet<Borderlands2Guns.Models.MetricRanks> MetricRanks { get; set; }
+
+
+
     }
 }

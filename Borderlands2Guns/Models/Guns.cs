@@ -249,14 +249,6 @@ namespace Borderlands2Guns.Models
     }
 
 
-    public class StoredProcedures
-    {
-
-    }
-
-
-
-
 
 
 
