@@ -128,8 +128,8 @@ BEGIN
 		g.Id, 
 		(select count(ag.Id) from @AllGuns ag) allrankcount,
 		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
-		RANK() OVER(ORDER  BY g.ReloadSpeed DESC) allrank,
-		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed DESC) typerank
+		RANK() OVER(ORDER  BY g.ReloadSpeed ) allrank,
+		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed ) typerank
 	INTO #rankings4
 	FROM @AllGuns g;
 
@@ -151,7 +151,7 @@ BEGIN
 		(select count(ag.Id) from @AllGuns ag) allrankcount,
 		(select count(ag.Id) from @AllGuns ag where ag.[type] = @type) typerankcount,
 		RANK() OVER(ORDER  BY g.MagazineSize DESC) allrank,
-		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.ReloadSpeed DESC) typerank
+		RANK() OVER(PARTITION BY g.[Type] ORDER  BY g.MagazineSize DESC) typerank
 	INTO #rankings5
 	FROM @AllGuns g;
 
