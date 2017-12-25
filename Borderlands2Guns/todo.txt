@@ -11,8 +11,7 @@
 - need to be able to compare guns.
 - create list of all guns currently using.
 - search box on menu bar working.
-- ranks for each metric updated on blur. [x/x][x/x] overall rank and type rank.
-
+- show damageOnTarget metric rank on create form.
 
 
 x- remove none from enum.
@@ -24,3 +23,4 @@ x- trim name input.
 x- fix edit page, accuracy to whole number.
 x- fixing the gun calc for edit page breaks it for create page, and visa versa.
 x- dark theme.
+x- ranks for each metric updated on blur. [x/x][x/x] overall rank and type rank.

@@ -60,7 +60,7 @@
 
 
             <div class="form-row">
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label asp-for="Damage" class="control-label"></label>
                     <input id="damage" asp-for="Damage" class="form-control" type="text" />
                     <span id="damage-rank-all" data-role="rankall" class="badge badge-light"></span>
@@ -88,29 +88,33 @@
                     <span id="reloadspeed-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="ReloadSpeed" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label asp-for="MagazineSize" class="control-label"></label>
                     <input id="magazinesize" asp-for="MagazineSize" class="form-control" />
                     <span id="magazinesize-rank-all" data-role="rankall" class="badge badge-light"></span>
                     <span id="magazinesize-rank-type" data-role="ranktype" class="badge badge-light"></span>
                     <span asp-validation-for="MagazineSize" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-2">
-                    <div class="alert alert-info" role="alert">
-                        <label asp-for="DamageOnTarget" class="control-label"></label>
-                        <input id="damageOnTarget" asp-for="DamageOnTarget" class="form-control" readonly />
-                        <span id="damageOnTarget-rank-all" data-role="rankall" class="badge badge-light"></span>
-                        <span id="damageOnTarget-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                        <span asp-validation-for="DamageOnTarget" class="text-danger"></span>
-                    </div>
                 </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="alert alert-info" role="alert">
+                                <label asp-for="DamageOnTarget" class="control-label"></label>
+                                <input id="damageOnTarget" asp-for="DamageOnTarget" class="form-control" readonly />
+                                <span id="damageOnTarget-rank-all" data-role="rankall" class="badge badge-light"></span>
+                                <span id="damageOnTarget-rank-type" data-role="ranktype" class="badge badge-light"></span>
+                                <span asp-validation-for="DamageOnTarget" class="text-danger"></span>
+                            </div>
+                        </div>
 
 
-            </div>
+                    </div>
 
             <div class="form-row">
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-6">
                     <label asp-for="ElementalEffect" class="control-label"></label>
                     <select id="elementalEffect" asp-for="ElementalEffect" class="form-control" asp-items="Html.GetEnumSelectList<ElementalEffect>()">
                         <option selected="selected" value="-1">Select if Available</option>
@@ -131,18 +135,25 @@
                     <input id="chance" asp-for="Chance" value="0" class="form-control" />
                     <span asp-validation-for="Chance" class="text-danger"></span>
                 </div>
-
-                <div class="form-group col-md-3">
-                    <div class="alert alert-info" role="alert">
-                        <label asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="control-label"></label>
-                        <input id="elementalDamageOnTargetTimesDamagePerSecondTimesChance" asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="form-control" readonly />
-                        <span id="Edot-rank-all" data-role="rankall" class="badge badge-light"></span>
-                        <span id="Edot-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                        <span asp-validation-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="text-danger"></span>
-                    </div>
                 </div>
 
-            </div>
+            
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <div class="alert alert-info" role="alert">
+                                <label asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="control-label"></label>
+                                <input id="elementalDamageOnTargetTimesDamagePerSecondTimesChance" asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="form-control" readonly />
+                                <span id="Edot-rank-all" data-role="rankall" class="badge badge-light"></span>
+                                <span id="Edot-rank-type" data-role="ranktype" class="badge badge-light"></span>
+                                <span asp-validation-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
 
             <div class="form-row">
                 <div class="form-group col-md-12">

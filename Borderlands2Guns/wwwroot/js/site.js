@@ -105,7 +105,7 @@ $(document).ready(function () {
 
     });
 
-    $("#damage, #accuracy,  #firerate, #reloadspeed, #magazinesize").on("blur", function () {
+    $("#damage, #accuracy,  #firerate, #reloadspeed, #magazinesize, #damageOnTarget").on("blur", function () {
 
         var element = $(this);
         var id = element.prop("id");
@@ -113,6 +113,8 @@ $(document).ready(function () {
         var type = $("#guntype").val();
         var rankall = element.parent().find("[data-role=rankall]");
         var ranktype = element.parent().find("[data-role=ranktype]");
+
+        console.log([element, id, content, type, rankall, ranktype]);
 
         if (type.length > 0 & content.length > 0)
         {
