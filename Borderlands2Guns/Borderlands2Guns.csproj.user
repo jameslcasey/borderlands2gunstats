@@ -12,7 +12,7 @@
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_DbContextTypeFullName>Borderlands2Guns.Models.Borderlands2GunsContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>False</WebStackScaffolding_IsViewGenerationSelected>
-    <NameOfLastUsedPublishProfile>win10-x64</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>Borderlands2Guns - Web Deploy</NameOfLastUsedPublishProfile>
     <ActiveDebugProfile>Borderlands2Guns</ActiveDebugProfile>
     <WebStackScaffolding_LayoutPageFile />
   </PropertyGroup>

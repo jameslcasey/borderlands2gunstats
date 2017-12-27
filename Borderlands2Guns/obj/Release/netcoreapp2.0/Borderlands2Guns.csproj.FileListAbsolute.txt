@@ -8,3 +8,4 @@ C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderland
 C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Release\netcoreapp2.0\Borderlands2Guns.AssemblyInfo.cs
 C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Release\netcoreapp2.0\Borderlands2Guns.dll
 C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Release\netcoreapp2.0\Borderlands2Guns.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\Borderlands2Guns\Borderlands2Guns\obj\Release\netcoreapp2.0\Borderlands2Guns.csprojResolveAssemblyReference.cache

@@ -26,7 +26,7 @@ namespace Borderlands2Guns
             services.AddMvc();
 
             services.AddDbContext<Borderlands2GunsContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Borderlands2GunsContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("Borderlands2GunsContextProd")));
 
         }
 
