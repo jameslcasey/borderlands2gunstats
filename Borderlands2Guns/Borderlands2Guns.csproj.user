@@ -13,7 +13,7 @@
     <WebStackScaffolding_DbContextTypeFullName>Borderlands2Guns.Models.Borderlands2GunsContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>False</WebStackScaffolding_IsViewGenerationSelected>
     <NameOfLastUsedPublishProfile>Borderlands2Guns - Web Deploy</NameOfLastUsedPublishProfile>
-    <ActiveDebugProfile>Borderlands2Guns</ActiveDebugProfile>
+    <ActiveDebugProfile>Borderlands2GunsProd</ActiveDebugProfile>
     <WebStackScaffolding_LayoutPageFile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

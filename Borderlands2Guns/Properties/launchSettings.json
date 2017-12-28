@@ -15,7 +15,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Borderlands2Guns": {
+    "Borderlands2GunsProd": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "Borderlands2GunsDev": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
@@ -23,5 +30,7 @@
       },
       "applicationUrl": "http://localhost:52805/"
     }
+
+
   }
 }

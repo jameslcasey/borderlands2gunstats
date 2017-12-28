@@ -25,8 +25,17 @@ namespace Borderlands2Guns
         {
             services.AddMvc();
 
+            string ASPNETCORE_ENVIRONMENT = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            string dbcontextname = "Borderlands2GunsContextDev";
+
+            if (ASPNETCORE_ENVIRONMENT == "Production")
+            {
+                dbcontextname = "Borderlands2GunsContextProd";
+            }
+
             services.AddDbContext<Borderlands2GunsContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Borderlands2GunsContextProd")));
+                options.UseSqlServer(Configuration.GetConnectionString(dbcontextname)));
+
 
         }
 
