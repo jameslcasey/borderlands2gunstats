@@ -1,197 +1,225 @@
 ﻿@model Borderlands2Guns.Models.Guns
+
 @{
     ViewData["Title"] = "Create";
 }
+
 @section styles {
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
 }
-<div class="row">
 
-    <div class="col-md-12">
 
-        <div class="form-row">
-            <div class="form-group col-md-1">
-                <a class="form-control btn btn-info" asp-action="Index">Back to List</a>
+<a asp-action="Index"> <div class="ui primary button">Back to List <i class=""></i></div> </a>
+
+
+<h2>Create</h2>
+
+
+<form asp-action="Create" class="ui form">
+
+    <h4 class="ui dividing header">Guns</h4>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="field">
+
+        <div class="field">
+            <label asp-for="Name" class="control-label"></label>
+            <div class="field">
+                <input id="gunname" asp-for="Name" class="form-control" />
             </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+
+        <div class="field">
+            <div class="three fields">
+                <div class="field">
+                    <label asp-for="Level" class="control-label"></label>
+                    <div class="field">
+                        <input id="level" asp-for="Level" class="form-control" />
+                    </div>                    
+                    <span asp-validation-for="Level" class="text-danger"></span>
+                </div>
+
+                <div class="field">
+                    <label asp-for="Type" class="control-label"></label>
+                    <div class="field">
+                        <select id="guntype" asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<GunType>()">
+                            <option selected="selected" value=""></option>
+                        </select>
+                    </div>                    
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+
+                <div class="field">
+                    <label asp-for="Brand" class="control-label"></label>
+                    <div class="field">
+                        <select id="brand" asp-for="Brand" class="form-control" asp-items="Html.GetEnumSelectList<Brand>()">
+                            <option selected="selected" value=""></option>
+                        </select>
+                    </div>                    
+                    <span asp-validation-for="Brand" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="four fields">
+        <div class="field">
+            <label asp-for="Damage" class="control-label"></label>
+            <div class="field">
+                <input id="damage" asp-for="Damage" class="form-control" type="text" />
+            </div>            
+            <div class="ui labels">
+                <a id="damage-rank-all"  data-role="rankall" class="ui pointing basic label hidden"></a>
+                <a id="damage-rank-type"  data-role="ranktype" class="ui pointing basic label hidden"></a>
+            </div>            
+            <span asp-validation-for="Damage" class="text-danger"></span>
+        </div>
+        <div class="field">
+            <label asp-for="Accuracy" class="control-label"></label>
+            <div class="field">
+                <input id="accuracy" asp-for="Accuracy" class="form-control" />
+            </div>            
+            <div class="ui labels">
+                <a id="accuracy-rank-all" data-role="rankall" class="ui pointing basic label hidden"></a>
+                <a id="accuracy-rank-type" data-role="ranktype" class="ui pointing basic label hidden"></a>
+            </div>            
+            <span asp-validation-for="Accuracy" class="text-danger"></span>
+        </div>
+        <div class="field">
+            <label asp-for="FireRate" class="control-label"></label>
+            <div class="field">
+                <input id="firerate" asp-for="FireRate" class="form-control" />
+            </div>            
+            <div class="ui labels">
+                <a id="firerate-rank-all" data-role="rankall" class="ui pointing basic label hidden"></a>
+                <a id="firerate-rank-type" data-role="ranktype" class="ui pointing basic label hidden"></a>
+            </div>            
+            <span asp-validation-for="FireRate" class="text-danger"></span>
+        </div>
+        <div class="field">
+            <label asp-for="ReloadSpeed" class="control-label"></label>
+            <div class="field">
+                <input id="reloadspeed" asp-for="ReloadSpeed" class="form-control" />
+            </div>            
+            <div class="ui labels">
+                <a id="reloadspeed-rank-all" data-role="rankall" class="ui pointing basic label hidden"></a>
+                <a id="reloadspeed-rank-type" data-role="ranktype" class="ui pointing basic label hidden"></a>
+            </div>            
+            <span asp-validation-for="ReloadSpeed" class="text-danger"></span>
+        </div>
+        <div class="field">
+            <label asp-for="MagazineSize" class="control-label"></label>
+            <div class="field">
+                <input id="magazinesize" asp-for="MagazineSize" class="form-control" />
+            </div>            
+            <div class="ui fields">
+                <a id="magazinesize-rank-all" data-role="rankall" class="ui pointing basic label hidden"></a>
+                <a id="magazinesize-rank-type" data-role="ranktype" class="ui pointing basic label hidden"></a>
+            </div>            
+            <span asp-validation-for="MagazineSize" class="text-danger"></span>
         </div>
     </div>
 
-</div>
-
-<p></p>
-<h2>Create</h2>
-<h4>Guns</h4>
-<hr />
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create">
-
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input id="gunname" asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label asp-for="Level" class="control-label"></label>
-                    <input id="level" asp-for="Level" class="form-control" />
-                    <span asp-validation-for="Level" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-4">
-                    <label asp-for="Type" class="control-label"></label>
-                    <select id="guntype" asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<GunType>()">
-                        <option selected="selected" value=""></option>
-                    </select>
-                    <span asp-validation-for="Type" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-4">
-                    <label asp-for="Brand" class="control-label"></label>
-                    <select id="brand" asp-for="Brand" class="form-control" asp-items="Html.GetEnumSelectList<Brand>()">
-                        <option selected="selected" value=""></option>
-                    </select>
-                    <span asp-validation-for="Brand" class="text-danger"></span>
+    <div class="ui cards">
+        <div class="card">
+            <div class=" content">
+                <div class="header">
+                    <label asp-for="DamageOnTarget" class="control-label"></label>
                 </div>
 
-            </div>
-
-
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label asp-for="Damage" class="control-label"></label>
-                    <input id="damage" asp-for="Damage" class="form-control" type="text" />
-                    <span id="damage-rank-all" data-role="rankall" class="badge badge-light"></span>
-                    <span id="damage-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                    <span asp-validation-for="Damage" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-2">
-                    <label asp-for="Accuracy" class="control-label"></label>
-                    <input id="accuracy" asp-for="Accuracy" class="form-control" />
-                    <span id="accuracy-rank-all" data-role="rankall" class="badge badge-light"></span>
-                    <span id="accuracy-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                    <span asp-validation-for="Accuracy" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-2">
-                    <label asp-for="FireRate" class="control-label"></label>
-                    <input id="firerate" asp-for="FireRate" class="form-control" />
-                    <span id="firerate-rank-all" data-role="rankall" class="badge badge-light"></span>
-                    <span id="firerate-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                    <span asp-validation-for="FireRate" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-2">
-                    <label asp-for="ReloadSpeed" class="control-label"></label>
-                    <input id="reloadspeed" asp-for="ReloadSpeed" class="form-control" />
-                    <span id="reloadspeed-rank-all" data-role="rankall" class="badge badge-light"></span>
-                    <span id="reloadspeed-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                    <span asp-validation-for="ReloadSpeed" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-3">
-                    <label asp-for="MagazineSize" class="control-label"></label>
-                    <input id="magazinesize" asp-for="MagazineSize" class="form-control" />
-                    <span id="magazinesize-rank-all" data-role="rankall" class="badge badge-light"></span>
-                    <span id="magazinesize-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                    <span asp-validation-for="MagazineSize" class="text-danger"></span>
-                </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="alert alert-info" role="alert">
-                                <label asp-for="DamageOnTarget" class="control-label"></label>
-                                <input id="damageOnTarget" asp-for="DamageOnTarget" class="form-control" readonly />
-                                <span id="damageOnTarget-rank-all" data-role="rankall" class="badge badge-light"></span>
-                                <span id="damageOnTarget-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                                <span asp-validation-for="DamageOnTarget" class="text-danger"></span>
-                            </div>
-                        </div>
-
-
+                <div class="description">
+                    <div class="field">
+                        <input id="damageOnTarget" asp-for="DamageOnTarget" class="form-control" readonly />
                     </div>
 
-            <div class="form-row">
+                    <div class="ui fields">
+                        <span id="damageOnTarget-rank-all" data-role="rankall" class="ui pointing basic label hidden"></span>
+                        <span id="damageOnTarget-rank-type" data-role="ranktype" class="ui pointing basic label hidden"></span>
+                    </div>
+                    <span asp-validation-for="DamageOnTarget" class="text-danger"></span>
+                </div>
+            </div>
 
-                <div class="form-group col-md-6">
-                    <label asp-for="ElementalEffect" class="control-label"></label>
+        </div>
+    </div>
+
+    <h4 class="ui dividing header">Elemental Effect</h4>
+
+    <div class="field">
+
+        <div class="four fields">
+
+            <div class="field">
+                <label asp-for="ElementalEffect" class="control-label"></label>
+
+                <div class="field">
                     <select id="elementalEffect" asp-for="ElementalEffect" class="form-control" asp-items="Html.GetEnumSelectList<ElementalEffect>()">
                         <option selected="selected" value="-1">Select if Available</option>
                     </select>
+                </div>            
                     <span asp-validation-for="ElementalEffect" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group col-md-3">
-                    <label asp-for="ElementalDamagePerSecond" class="control-label"></label>
-                    <input id="elementalDamagePerSecond" asp-for="ElementalDamagePerSecond" value="0" class="form-control" />
-                    <span asp-validation-for="ElementalDamagePerSecond" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group col-md-3">
-                    <label asp-for="Chance" class="control-label"></label>
-                    <input id="chance" asp-for="Chance" value="0" class="form-control" />
-                    <span asp-validation-for="Chance" class="text-danger"></span>
-                </div>
-                </div>
-
-            
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        </div>
-
-
-                        <div class="form-group col-md-6">
-                            <div class="alert alert-info" role="alert">
-                                <label asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="control-label"></label>
-                                <input id="elementalDamageOnTargetTimesDamagePerSecondTimesChance" asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="form-control" readonly />
-                                <span id="Edot-rank-all" data-role="rankall" class="badge badge-light"></span>
-                                <span id="Edot-rank-type" data-role="ranktype" class="badge badge-light"></span>
-                                <span asp-validation-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="text-danger"></span>
-                            </div>
-                        </div>
-
-                    </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <input type="submit" value="Create" class="btn btn-default float-right" />
-                </div>
-            </div>
-        
-        
-        </form>
-    </div>
-    <div id="searchResults" class="col-md-6">
-    </div>
-
-    <div class="col-md-6">
-
-        <div class="form-row">
-
-            <div class="form-group col-md-2">
-                <a class="form-control btn btn-info" asp-action="Index">Back to List</a>
             </div>
 
-            <div id="prerank" class="form-group  col-md-10">
 
-            </div>
-
+        <div class="field">
+            <label asp-for="ElementalDamagePerSecond" class="control-label"></label>
+            <div class="field">
+                <input id="elementalDamagePerSecond" asp-for="ElementalDamagePerSecond" value="0" class="form-control" />
+            </div>            
+            <span asp-validation-for="ElementalDamagePerSecond" class="text-danger"></span>
         </div>
 
 
+        <div class="field">
+            <label asp-for="Chance" class="control-label"></label>
+            <div class="field">
+                <input id="chance" asp-for="Chance" value="0" class="form-control" />
+            </div>            
+            <span asp-validation-for="Chance" class="text-danger"></span>
+        </div>
+
+        <div class="field">
+                <label asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="control-label"></label>
+                <div class="field">
+                    <input id="elementalDamageOnTargetTimesDamagePerSecondTimesChance" asp-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="form-control" readonly />
+                </div>               
+                <div class="ui fields">
+                    <span id="Edot-rank-all" data-role="rankall" class="badge badge-light"></span>
+                    <span id="Edot-rank-type" data-role="ranktype" class="badge badge-light"></span>
+                </div>                <span asp-validation-for="ElementalDamageOnTargetTimesDamagePerSecondTimesChance" class="text-danger"></span>
+            </div>
+        </div>
+
     </div>
 
 
+    <input type="submit" value="Submit" class="ui submit button" />
+
+
+</form>
+
+
+<div id="searchResults" class="ui four column grid">
+
+
+
+
 </div>
+
+
+
 
 
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <script src="~/js/Guns/create.js"></script>
 
 }
